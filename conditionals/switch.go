@@ -7,10 +7,11 @@ import (
 func main() {
 
 	//types must match
-	//only a single case statement will be executed per switch block
-	switch "aws" {
+	//fallthrough automatically executes the next consecutive case
+	switch "linux" {
 	case "linux":
 		fmt.Println("\nhere are some recommended Linux courses")
+		fallthrough
 	case "docker":
 		fmt.Println("\nhere are some recommended Docker courses")
 	case "windows":
