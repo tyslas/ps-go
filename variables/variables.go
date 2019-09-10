@@ -2,17 +2,16 @@ package main
 
 import (
     "fmt"
-    "reflect"
+    "os"
 )
 
 func main() {
-    name := "Tito"               //name of subscriber
+    name := os.Getenv("USER")               //name of subscriber
     course := "Go Fundamentals"  //course being viewed
 
     fmt.Println("\nHi", name, "you're currently watching", course)
 
     reference := &course
-    fmt.Println("\nreference var is type ", reflect.TypeOf(reference))
     changeCourse(reference)
     fmt.Println("\nyou are now watching course ", course)
 }
