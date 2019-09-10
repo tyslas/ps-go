@@ -2,21 +2,21 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
+	"time"
 )
 
 func main() {
 
-	//types must match
-	//fallthrough automatically executes the next consecutive case
-	switch "linux" {
-	case "linux":
-		fmt.Println("\nhere are some recommended Linux courses")
-		fallthrough
-	case "docker":
-		fmt.Println("\nhere are some recommended Docker courses")
-	case "windows":
-		fmt.Println("\nhere are some recommended Windows courses")
-	default: 
-		fmt.Println("\nno matches - please take a look at the most popular courses below")
+	switch tmpNum := random(); tmpNum {
+	case 0, 2, 4, 6, 8:
+		fmt.Println("\nwe got an even number -", tmpNum)
+	case 1, 3, 5, 7, 9:
+		fmt.Println("\nwe got an odd number -", tmpNum)
 	}
+}
+
+func random() int {
+	rand.Seed(time.Now().Unix())
+	return rand.Intn(10)
 }
