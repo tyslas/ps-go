@@ -13,7 +13,7 @@ func main() {
 	//can use for parrallelism
 	runtime.GOMAXPROCS(2)
 
-	//instruct main not to proceed beyond line 26
+	//instruct main not to proceed beyond line 32
 	//until both go-routines are complete
 	var waitGrp sync.WaitGroup
 	waitGrp.Add(2)
